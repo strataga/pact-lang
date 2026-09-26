@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "capabilities": ["math.double"],
+  "body": [
+    {"let": "value", "value": {"int": 21}},
+    {"return": {"tool": "math.double", "args": [{"var": "value"}]}}
+  ]
+}

@@ -1,0 +1,315 @@
+{
+  "schema_version": 1,
+  "pilot_version": "pilot-v1",
+  "description": "Language-neutral deterministic code tasks for comparing implementations across matched languages and models.",
+  "deadline_seconds": 300,
+  "languages": [
+    "rust",
+    "python",
+    "typescript-strict",
+    "pact-text",
+    "pact-json"
+  ],
+  "groups": [
+    "generation",
+    "editing",
+    "repair"
+  ],
+  "task_count": 24,
+  "tasks": [
+    {
+      "task_id": "GEN-01",
+      "group": "generation",
+      "deadline_seconds": 300,
+      "prompt": "Write a program that prints the sum of nineteen and twenty-three as one base-10 integer followed by a newline.",
+      "required_capabilities": [],
+      "starter_sources": null
+    },
+    {
+      "task_id": "GEN-02",
+      "group": "generation",
+      "deadline_seconds": 300,
+      "prompt": "Write a program that evaluates seven multiplied by eight, then subtracts six, and prints the resulting integer followed by a newline. Follow the language's ordinary multiplication-before-subtraction precedence.",
+      "required_capabilities": [],
+      "starter_sources": null
+    },
+    {
+      "task_id": "GEN-03",
+      "group": "generation",
+      "deadline_seconds": 300,
+      "prompt": "Write a program that subtracts fifty-seven from one hundred and prints the resulting integer followed by a newline.",
+      "required_capabilities": [],
+      "starter_sources": null
+    },
+    {
+      "task_id": "GEN-04",
+      "group": "generation",
+      "deadline_seconds": 300,
+      "prompt": "Write a program that checks whether twelve is less than fifteen and prints 1 when true or 0 when false, followed by a newline.",
+      "required_capabilities": [],
+      "starter_sources": null
+    },
+    {
+      "task_id": "GEN-05",
+      "group": "generation",
+      "deadline_seconds": 300,
+      "prompt": "Write a program that checks whether seven multiplied by six equals forty-two and prints 1 when true or 0 when false, followed by a newline.",
+      "required_capabilities": [],
+      "starter_sources": null
+    },
+    {
+      "task_id": "GEN-06",
+      "group": "generation",
+      "deadline_seconds": 300,
+      "prompt": "Set n to nine. Use a nested conditional: produce zero when n is less than five; otherwise produce the product of seven and eight when n is less than ten; otherwise produce one. Print the selected integer followed by a newline.",
+      "required_capabilities": [],
+      "starter_sources": null
+    },
+    {
+      "task_id": "GEN-07",
+      "group": "generation",
+      "deadline_seconds": 300,
+      "prompt": "Using the optional math.double capability, double twenty-one and print the returned integer followed by a newline.",
+      "required_capabilities": [
+        "math.double"
+      ],
+      "starter_sources": null
+    },
+    {
+      "task_id": "GEN-08",
+      "group": "generation",
+      "deadline_seconds": 300,
+      "prompt": "Check whether three multiplied by three equals nine. If true, print eight multiplied by seven; otherwise print zero. End the integer output with a newline.",
+      "required_capabilities": [],
+      "starter_sources": null
+    },
+    {
+      "task_id": "EDIT-01",
+      "group": "editing",
+      "deadline_seconds": 300,
+      "prompt": "Edit the return expression so this program prints the sum of twenty and twenty-three, as one integer followed by a newline.",
+      "required_capabilities": [],
+      "starter_sources": {
+        "rust": "fn main() {\n    let result: i64 = (20 + 21);\n    println!(\"{}\", result);\n}\n",
+        "python": "print((20 + 21))\n",
+        "typescript-strict": "console.log(((20n + 21n)).toString());\n",
+        "pact-text": "return (20 + 21);\n",
+        "pact-json": "{\"version\":1,\"capabilities\":[],\"body\":[{\"return\":{\"bin\":{\"op\":\"+\",\"left\":{\"int\":20},\"right\":{\"int\":21}}}}]}"
+      }
+    },
+    {
+      "task_id": "EDIT-02",
+      "group": "editing",
+      "deadline_seconds": 300,
+      "prompt": "Edit the arithmetic expression so the program prints the product of seven and seven followed by a newline.",
+      "required_capabilities": [],
+      "starter_sources": {
+        "rust": "fn main() {\n    let result: i64 = (7 * 5);\n    println!(\"{}\", result);\n}\n",
+        "python": "print((7 * 5))\n",
+        "typescript-strict": "console.log(((7n * 5n)).toString());\n",
+        "pact-text": "return (7 * 5);\n",
+        "pact-json": "{\"version\":1,\"capabilities\":[],\"body\":[{\"return\":{\"bin\":{\"op\":\"*\",\"left\":{\"int\":7},\"right\":{\"int\":5}}}}]}"
+      }
+    },
+    {
+      "task_id": "EDIT-03",
+      "group": "editing",
+      "deadline_seconds": 300,
+      "prompt": "Edit this program so that it prints two more than the value of n when n equals forty-one, and prints zero otherwise.",
+      "required_capabilities": [],
+      "starter_sources": {
+        "rust": "fn main() {\n    let n: i64 = 41;\n    let result: i64 = (if (n == 41) { n } else { 0 });\n    println!(\"{}\", result);\n}\n",
+        "python": "n = 41\nprint((n if (n == 41) else 0))\n",
+        "typescript-strict": "const n: bigint = 41n;\nconsole.log((((n == 41n) ? n : 0n)).toString());\n",
+        "pact-text": "let n = 41;\nreturn if (n == 41) { n } else { 0 };\n",
+        "pact-json": "{\"version\":1,\"capabilities\":[],\"body\":[{\"let\":\"n\",\"value\":{\"int\":41}},{\"return\":{\"if\":{\"condition\":{\"cmp\":{\"op\":\"==\",\"left\":{\"var\":\"n\"},\"right\":{\"int\":41}}},\"then\":{\"var\":\"n\"},\"else\":{\"int\":0}}}}]}"
+      }
+    },
+    {
+      "task_id": "EDIT-04",
+      "group": "editing",
+      "deadline_seconds": 300,
+      "prompt": "Change the comparison so this program prints one exactly when the two sixes are equal, and zero otherwise.",
+      "required_capabilities": [],
+      "starter_sources": {
+        "rust": "fn main() {\n    let result: i64 = (if (6 < 6) { 1 } else { 0 });\n    println!(\"{}\", result);\n}\n",
+        "python": "print((1 if (6 < 6) else 0))\n",
+        "typescript-strict": "console.log((((6n < 6n) ? 1n : 0n)).toString());\n",
+        "pact-text": "return if (6 < 6) { 1 } else { 0 };\n",
+        "pact-json": "{\"version\":1,\"capabilities\":[],\"body\":[{\"return\":{\"if\":{\"condition\":{\"cmp\":{\"op\":\"<\",\"left\":{\"int\":6},\"right\":{\"int\":6}}},\"then\":{\"int\":1},\"else\":{\"int\":0}}}}]}"
+      }
+    },
+    {
+      "task_id": "EDIT-05",
+      "group": "editing",
+      "deadline_seconds": 300,
+      "prompt": "This program uses math.double. Edit its argument so the printed result is the double of twenty.",
+      "required_capabilities": [
+        "math.double"
+      ],
+      "starter_sources": {
+        "rust": "fn math_double(x: i64) -> i64 { x.wrapping_mul(2) }\nfn main() {\n    let result: i64 = math_double(21);\n    println!(\"{}\", result);\n}\n",
+        "python": "def math_double(x):\n    return ((x * 2 + 2**63) % 2**64) - 2**63\n\nprint(math_double(21))\n",
+        "typescript-strict": "function mathDouble(x: bigint): bigint { return BigInt.asIntN(64, x * 2n); }\nconsole.log((mathDouble(21n)).toString());\n",
+        "pact-text": "capability math.double;\nreturn tool math.double(21);\n",
+        "pact-json": "{\"version\":1,\"capabilities\":[\"math.double\"],\"body\":[{\"return\":{\"tool\":\"math.double\",\"args\":[{\"int\":21}]}}]}"
+      }
+    },
+    {
+      "task_id": "EDIT-06",
+      "group": "editing",
+      "deadline_seconds": 300,
+      "prompt": "Edit the selected branch value so the program prints the product of seven and eight when x is at least seven, and zero otherwise.",
+      "required_capabilities": [],
+      "starter_sources": {
+        "rust": "fn main() {\n    let x: i64 = 8;\n    let result: i64 = (if (x < 7) { 0 } else { 40 });\n    println!(\"{}\", result);\n}\n",
+        "python": "x = 8\nprint((0 if (x < 7) else 40))\n",
+        "typescript-strict": "const x: bigint = 8n;\nconsole.log((((x < 7n) ? 0n : 40n)).toString());\n",
+        "pact-text": "let x = 8;\nreturn if (x < 7) { 0 } else { 40 };\n",
+        "pact-json": "{\"version\":1,\"capabilities\":[],\"body\":[{\"let\":\"x\",\"value\":{\"int\":8}},{\"return\":{\"if\":{\"condition\":{\"cmp\":{\"op\":\"<\",\"left\":{\"var\":\"x\"},\"right\":{\"int\":7}}},\"then\":{\"int\":0},\"else\":{\"int\":40}}}}]}"
+      }
+    },
+    {
+      "task_id": "EDIT-07",
+      "group": "editing",
+      "deadline_seconds": 300,
+      "prompt": "Edit the selected branch expression so the program prints the sum of forty and three when n doubled equals six, and zero otherwise.",
+      "required_capabilities": [],
+      "starter_sources": {
+        "rust": "fn main() {\n    let n: i64 = 3;\n    let result: i64 = (if ((n * 2) == 6) { (39 + 2) } else { 0 });\n    println!(\"{}\", result);\n}\n",
+        "python": "n = 3\nprint(((39 + 2) if ((n * 2) == 6) else 0))\n",
+        "typescript-strict": "const n: bigint = 3n;\nconsole.log(((((n * 2n) == 6n) ? (39n + 2n) : 0n)).toString());\n",
+        "pact-text": "let n = 3;\nreturn if ((n * 2) == 6) { (39 + 2) } else { 0 };\n",
+        "pact-json": "{\"version\":1,\"capabilities\":[],\"body\":[{\"let\":\"n\",\"value\":{\"int\":3}},{\"return\":{\"if\":{\"condition\":{\"cmp\":{\"op\":\"==\",\"left\":{\"bin\":{\"op\":\"*\",\"left\":{\"var\":\"n\"},\"right\":{\"int\":2}}},\"right\":{\"int\":6}}},\"then\":{\"bin\":{\"op\":\"+\",\"left\":{\"int\":39},\"right\":{\"int\":2}}},\"else\":{\"int\":0}}}}]}"
+      }
+    },
+    {
+      "task_id": "EDIT-08",
+      "group": "editing",
+      "deadline_seconds": 300,
+      "prompt": "Change the boolean condition so this program takes the branch that prints the product of six and eight.",
+      "required_capabilities": [],
+      "starter_sources": {
+        "rust": "fn main() {\n    let result: i64 = (if false { (6 * 8) } else { 1 });\n    println!(\"{}\", result);\n}\n",
+        "python": "print(((6 * 8) if False else 1))\n",
+        "typescript-strict": "console.log(((false ? (6n * 8n) : 1n)).toString());\n",
+        "pact-text": "return if false { (6 * 8) } else { 1 };\n",
+        "pact-json": "{\"version\":1,\"capabilities\":[],\"body\":[{\"return\":{\"if\":{\"condition\":{\"bool\":false},\"then\":{\"bin\":{\"op\":\"*\",\"left\":{\"int\":6},\"right\":{\"int\":8}}},\"else\":{\"int\":1}}}}]}"
+      }
+    },
+    {
+      "task_id": "REPAIR-01",
+      "group": "repair",
+      "deadline_seconds": 300,
+      "prompt": "Repair the arithmetic so the program prints twice twenty-one as one integer followed by a newline.",
+      "required_capabilities": [],
+      "starter_sources": {
+        "rust": "fn main() {\n    let x: i64 = 21;\n    let result: i64 = (x + 20);\n    println!(\"{}\", result);\n}\n",
+        "python": "x = 21\nprint((x + 20))\n",
+        "typescript-strict": "const x: bigint = 21n;\nconsole.log(((x + 20n)).toString());\n",
+        "pact-text": "let x = 21;\nreturn (x + 20);\n",
+        "pact-json": "{\"version\":1,\"capabilities\":[],\"body\":[{\"let\":\"x\",\"value\":{\"int\":21}},{\"return\":{\"bin\":{\"op\":\"+\",\"left\":{\"var\":\"x\"},\"right\":{\"int\":20}}}}]}"
+      }
+    },
+    {
+      "task_id": "REPAIR-02",
+      "group": "repair",
+      "deadline_seconds": 300,
+      "prompt": "Repair the true branch so this program returns the sum of twenty and twenty-three when ready is true and zero otherwise.",
+      "required_capabilities": [],
+      "starter_sources": {
+        "rust": "fn main() {\n    let ready: bool = true;\n    let result: i64 = (if ready { 41 } else { 0 });\n    println!(\"{}\", result);\n}\n",
+        "python": "ready = True\nprint((41 if ready else 0))\n",
+        "typescript-strict": "const ready: boolean = true;\nconsole.log(((ready ? 41n : 0n)).toString());\n",
+        "pact-text": "let ready = true;\nreturn if ready { 41 } else { 0 };\n",
+        "pact-json": "{\"version\":1,\"capabilities\":[],\"body\":[{\"let\":\"ready\",\"value\":{\"bool\":true}},{\"return\":{\"if\":{\"condition\":{\"var\":\"ready\"},\"then\":{\"int\":41},\"else\":{\"int\":0}}}}]}"
+      }
+    },
+    {
+      "task_id": "REPAIR-03",
+      "group": "repair",
+      "deadline_seconds": 300,
+      "prompt": "Repair the comparison so it checks whether forty-two is less than forty-three, printing one when true and zero otherwise.",
+      "required_capabilities": [],
+      "starter_sources": {
+        "rust": "fn main() {\n    let result: i64 = (if (42 < 42) { 1 } else { 0 });\n    println!(\"{}\", result);\n}\n",
+        "python": "print((1 if (42 < 42) else 0))\n",
+        "typescript-strict": "console.log((((42n < 42n) ? 1n : 0n)).toString());\n",
+        "pact-text": "return if (42 < 42) { 1 } else { 0 };\n",
+        "pact-json": "{\"version\":1,\"capabilities\":[],\"body\":[{\"return\":{\"if\":{\"condition\":{\"cmp\":{\"op\":\"<\",\"left\":{\"int\":42},\"right\":{\"int\":42}}},\"then\":{\"int\":1},\"else\":{\"int\":0}}}}]}"
+      }
+    },
+    {
+      "task_id": "REPAIR-04",
+      "group": "repair",
+      "deadline_seconds": 300,
+      "prompt": "Repair the selected arithmetic expression so the program returns the product of seven and eight when the condition is true, and zero otherwise.",
+      "required_capabilities": [],
+      "starter_sources": {
+        "rust": "fn main() {\n    let result: i64 = (if true { (6 * 6) } else { 0 });\n    println!(\"{}\", result);\n}\n",
+        "python": "print(((6 * 6) if True else 0))\n",
+        "typescript-strict": "console.log(((true ? (6n * 6n) : 0n)).toString());\n",
+        "pact-text": "return if true { (6 * 6) } else { 0 };\n",
+        "pact-json": "{\"version\":1,\"capabilities\":[],\"body\":[{\"return\":{\"if\":{\"condition\":{\"bool\":true},\"then\":{\"bin\":{\"op\":\"*\",\"left\":{\"int\":6},\"right\":{\"int\":6}}},\"else\":{\"int\":0}}}}]}"
+      }
+    },
+    {
+      "task_id": "REPAIR-05",
+      "group": "repair",
+      "deadline_seconds": 300,
+      "prompt": "Repair the argument so this program uses math.double to double twenty and returns the result.",
+      "required_capabilities": [
+        "math.double"
+      ],
+      "starter_sources": {
+        "rust": "fn math_double(x: i64) -> i64 { x.wrapping_mul(2) }\nfn main() {\n    let result: i64 = math_double(19);\n    println!(\"{}\", result);\n}\n",
+        "python": "def math_double(x):\n    return ((x * 2 + 2**63) % 2**64) - 2**63\n\nprint(math_double(19))\n",
+        "typescript-strict": "function mathDouble(x: bigint): bigint { return BigInt.asIntN(64, x * 2n); }\nconsole.log((mathDouble(19n)).toString());\n",
+        "pact-text": "capability math.double;\nreturn tool math.double(19);\n",
+        "pact-json": "{\"version\":1,\"capabilities\":[\"math.double\"],\"body\":[{\"return\":{\"tool\":\"math.double\",\"args\":[{\"int\":19}]}}]}"
+      }
+    },
+    {
+      "task_id": "REPAIR-06",
+      "group": "repair",
+      "deadline_seconds": 300,
+      "prompt": "Repair the comparison so the program selects the sum of forty and three when the two values are equal, and zero otherwise.",
+      "required_capabilities": [],
+      "starter_sources": {
+        "rust": "fn main() {\n    let a: i64 = 6;\n    let b: i64 = 6;\n    let result: i64 = (if (a < b) { (40 + 3) } else { 0 });\n    println!(\"{}\", result);\n}\n",
+        "python": "a = 6\nb = 6\nprint(((40 + 3) if (a < b) else 0))\n",
+        "typescript-strict": "const a: bigint = 6n;\nconst b: bigint = 6n;\nconsole.log((((a < b) ? (40n + 3n) : 0n)).toString());\n",
+        "pact-text": "let a = 6;\nlet b = 6;\nreturn if (a < b) { (40 + 3) } else { 0 };\n",
+        "pact-json": "{\"version\":1,\"capabilities\":[],\"body\":[{\"let\":\"a\",\"value\":{\"int\":6}},{\"let\":\"b\",\"value\":{\"int\":6}},{\"return\":{\"if\":{\"condition\":{\"cmp\":{\"op\":\"<\",\"left\":{\"var\":\"a\"},\"right\":{\"var\":\"b\"}}},\"then\":{\"bin\":{\"op\":\"+\",\"left\":{\"int\":40},\"right\":{\"int\":3}}},\"else\":{\"int\":0}}}}]}"
+      }
+    },
+    {
+      "task_id": "REPAIR-07",
+      "group": "repair",
+      "deadline_seconds": 300,
+      "prompt": "Repair the branch values so the program returns the product of seven and eight for a negative n, and zero for a nonnegative n.",
+      "required_capabilities": [],
+      "starter_sources": {
+        "rust": "fn main() {\n    let n: i64 = -3;\n    let result: i64 = (if (n < 0) { 0 } else { (7 * 8) });\n    println!(\"{}\", result);\n}\n",
+        "python": "n = -3\nprint((0 if (n < 0) else (7 * 8)))\n",
+        "typescript-strict": "const n: bigint = -3n;\nconsole.log((((n < 0n) ? 0n : (7n * 8n))).toString());\n",
+        "pact-text": "let n = -3;\nreturn if (n < 0) { 0 } else { (7 * 8) };\n",
+        "pact-json": "{\"version\":1,\"capabilities\":[],\"body\":[{\"let\":\"n\",\"value\":{\"int\":-3}},{\"return\":{\"if\":{\"condition\":{\"cmp\":{\"op\":\"<\",\"left\":{\"var\":\"n\"},\"right\":{\"int\":0}}},\"then\":{\"int\":0},\"else\":{\"bin\":{\"op\":\"*\",\"left\":{\"int\":7},\"right\":{\"int\":8}}}}}}]}"
+      }
+    },
+    {
+      "task_id": "REPAIR-08",
+      "group": "repair",
+      "deadline_seconds": 300,
+      "prompt": "Repair the inner conditional's selected arithmetic expression so this nested conditional returns the product of seven and seven.",
+      "required_capabilities": [],
+      "starter_sources": {
+        "rust": "fn main() {\n    let result: i64 = (if true { (if false { 1 } else { 40 }) } else { 0 });\n    println!(\"{}\", result);\n}\n",
+        "python": "print(((1 if False else 40) if True else 0))\n",
+        "typescript-strict": "console.log(((true ? (false ? 1n : 40n) : 0n)).toString());\n",
+        "pact-text": "return if true { if false { 1 } else { 40 } } else { 0 };\n",
+        "pact-json": "{\"version\":1,\"capabilities\":[],\"body\":[{\"return\":{\"if\":{\"condition\":{\"bool\":true},\"then\":{\"if\":{\"condition\":{\"bool\":false},\"then\":{\"int\":1},\"else\":{\"int\":40}}},\"else\":{\"int\":0}}}}]}"
+      }
+    }
+  ]
+}

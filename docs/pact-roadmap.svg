@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1390" viewBox="0 0 1600 1390" role="img" aria-labelledby="title desc">
+  <title id="title">Pact roadmap: build trust, then broaden capability</title>
+  <desc id="desc">Seven staged roadmap steps: define contracts and baselines; secure native execution and tools; compare memory and programming models; grow the language; add agent-facing compiler operations; build reliable workflows; and evaluate on held-out tasks.</desc>
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#081527"/><stop offset="1" stop-color="#102d43"/></linearGradient>
+    <linearGradient id="accent" x2="1"><stop stop-color="#42d6c2"/><stop offset="1" stop-color="#63a8ff"/></linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#020914" flood-opacity=".28"/></filter>
+    <style>
+      .title{font:700 46px Inter,ui-sans-serif,system-ui,sans-serif;fill:#f4f8fc}.sub{font:400 21px Inter,ui-sans-serif,system-ui,sans-serif;fill:#b9cbd8}
+      .step{font:700 15px Inter,ui-sans-serif,system-ui,sans-serif;letter-spacing:2px;fill:#50ddca}.head{font:700 23px Inter,ui-sans-serif,system-ui,sans-serif;fill:#f4f8fc}
+      .body{font:400 17px Inter,ui-sans-serif,system-ui,sans-serif;fill:#c5d4df}.small{font:600 14px Inter,ui-sans-serif,system-ui,sans-serif;fill:#081527}
+      .card{fill:#132b40;stroke:#2a4960;stroke-width:1.4}
+    </style>
+  </defs>
+  <rect width="1600" height="1390" rx="30" fill="url(#bg)"/>
+  <circle cx="1460" cy="115" r="180" fill="#28647a" opacity=".11"/><circle cx="80" cy="1300" r="250" fill="#246c78" opacity=".10"/>
+  <text x="92" y="104" class="step">PACT · PRODUCT AND ENGINEERING ROADMAP</text>
+  <text x="92" y="166" class="title">Build trust. Then broaden capability.</text>
+  <text x="92" y="208" class="sub">Correct outcomes, secure execution, and speed are co-equal release gates.</text>
+  <rect x="92" y="242" width="1416" height="65" rx="16" fill="#102b3d" stroke="#2c6471"/>
+  <text x="120" y="282" class="body"><tspan font-weight="700" fill="#5fe0cc">NORTH STAR</tspan><tspan dx="22">Make agent-written programs dependable across broad workloads; make no speed claim until measured.</tspan></text>
+
+  <path d="M135 365 V1190" stroke="url(#accent)" stroke-width="4" stroke-dasharray="5 12" opacity=".75"/>
+  <!-- Cards -->
+  <g filter="url(#shadow)">
+    <rect class="card" x="184" y="334" width="1324" height="113" rx="18"/>
+    <rect class="card" x="184" y="465" width="1324" height="134" rx="18"/>
+    <rect class="card" x="184" y="617" width="1324" height="134" rx="18"/>
+    <rect class="card" x="184" y="769" width="1324" height="113" rx="18"/>
+    <rect class="card" x="184" y="900" width="1324" height="113" rx="18"/>
+    <rect class="card" x="184" y="1031" width="1324" height="113" rx="18"/>
+    <rect class="card" x="184" y="1162" width="1324" height="139" rx="18"/>
+  </g>
+  <g>
+    <circle cx="135" cy="390" r="25" fill="#42d6c2"/><text x="135" y="396" text-anchor="middle" class="small">01</text>
+    <text x="222" y="375" class="step">FOUNDATION</text><text x="222" y="408" class="head">Define contracts and baselines</text>
+    <text x="708" y="385" class="body">Version the JSON AST and diagnostics. Pilot generation, editing, and repair;</text><text x="708" y="412" class="body">compare with Rust, Python, and strict TypeScript on matched tasks and tools.</text>
+
+    <circle cx="135" cy="532" r="25" fill="#42d6c2"/><text x="135" y="538" text-anchor="middle" class="small">02</text>
+    <text x="222" y="505" class="step">TRUST BOUNDARY · FIRST</text><text x="222" y="538" class="head">Secure execution and tools</text>
+    <text x="708" y="515" class="body">Bubblewrap namespaces + cgroup v2. Deny network and host files; bound</text><text x="708" y="542" class="body">CPU, memory, processes, time, scratch, and output. Fail closed. Put tools</text><text x="708" y="569" class="body">and credentials in a host broker; begin with mock <tspan fill="#5fe0cc">math.double</tspan>.</text>
+
+    <circle cx="135" cy="684" r="25" fill="#42d6c2"/><text x="135" y="690" text-anchor="middle" class="small">03</text>
+    <text x="222" y="657" class="step">CONTROLLED EXPERIMENTS</text><text x="222" y="690" class="head">Compare memory and code styles</text>
+    <text x="708" y="667" class="body">Test ownership, bounded arenas, and managed heap; compare procedural,</text><text x="708" y="694" class="body">record/function, and class/method styles. Measure safety, memory, speed,</text><text x="708" y="721" class="body">compile time, and repair burden. Keep the simplest candidate that clears gates.</text>
+
+    <circle cx="135" cy="825" r="25" fill="#42d6c2"/><text x="135" y="831" text-anchor="middle" class="small">04</text>
+    <text x="222" y="810" class="step">LANGUAGE</text><text x="222" y="843" class="head">Add data and control flow</text>
+    <text x="708" y="819" class="body">Strings, arrays, records, tagged unions, functions, branches, and bounded</text><text x="708" y="846" class="body">iteration—with explicit overflow, bounds, recursion, and allocation rules.</text>
+
+    <circle cx="135" cy="956" r="25" fill="#42d6c2"/><text x="135" y="962" text-anchor="middle" class="small">05</text>
+    <text x="222" y="941" class="step">AGENT INTERFACE</text><text x="222" y="974" class="head">Make compiler edits reliable</text>
+    <text x="708" y="950" class="body">Versioned JSON check, inspect, and edit operations; stable node identities,</text><text x="708" y="977" class="body">revisions, source locations, and atomic rejection of stale or invalid edits.</text>
+
+    <circle cx="135" cy="1087" r="25" fill="#42d6c2"/><text x="135" y="1093" text-anchor="middle" class="small">06</text>
+    <text x="222" y="1072" class="step">WORKFLOWS</text><text x="222" y="1105" class="head">Handle failures and resumption</text>
+    <text x="708" y="1081" class="body">Host-owned SQLite checkpoints, explicit timeout/cancellation outcomes,</text><text x="708" y="1108" class="body">safe retries only for declared idempotent tools; then bounded parallelism.</text>
+
+    <circle cx="135" cy="1230" r="25" fill="#63a8ff"/><text x="135" y="1236" text-anchor="middle" class="small">07</text>
+    <text x="222" y="1208" class="step">HELD-OUT EVALUATION</text><text x="222" y="1241" class="head">Measure, tune, and report</text>
+    <text x="708" y="1204" class="body">Freeze 96 tasks; 3 pinned model configurations across 2 families;</text><text x="708" y="1231" class="body">3 samples per task. Match tools, docs, budgets, hardware, and sandbox.</text><text x="708" y="1258" class="body">Report paired uncertainty, failures, native runtime, and end-to-end time.</text>
+  </g>
+  <text x="92" y="1352" class="sub">Stages sequence evidence and risk reduction; they make no delivery-date or performance promise.</text>
+</svg>

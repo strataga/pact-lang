@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "pilot_version": "pilot-v1",
+  "checks": {
+    "GEN-01": {"kind":"stdout_exact","expected_stdout":"42\n"},
+    "GEN-02": {"kind":"stdout_exact","expected_stdout":"50\n"},
+    "GEN-03": {"kind":"stdout_exact","expected_stdout":"43\n"},
+    "GEN-04": {"kind":"stdout_exact","expected_stdout":"1\n"},
+    "GEN-05": {"kind":"stdout_exact","expected_stdout":"1\n"},
+    "GEN-06": {"kind":"stdout_exact","expected_stdout":"56\n"},
+    "GEN-07": {"kind":"stdout_exact","expected_stdout":"42\n"},
+    "GEN-08": {"kind":"stdout_exact","expected_stdout":"56\n"},
+    "EDIT-01": {"kind":"stdout_exact","expected_stdout":"43\n"},
+    "EDIT-02": {"kind":"stdout_exact","expected_stdout":"49\n"},
+    "EDIT-03": {"kind":"stdout_exact","expected_stdout":"43\n"},
+    "EDIT-04": {"kind":"stdout_exact","expected_stdout":"1\n"},
+    "EDIT-05": {"kind":"stdout_exact","expected_stdout":"40\n"},
+    "EDIT-06": {"kind":"stdout_exact","expected_stdout":"56\n"},
+    "EDIT-07": {"kind":"stdout_exact","expected_stdout":"43\n"},
+    "EDIT-08": {"kind":"stdout_exact","expected_stdout":"48\n"},
+    "REPAIR-01": {"kind":"stdout_exact","expected_stdout":"42\n"},
+    "REPAIR-02": {"kind":"stdout_exact","expected_stdout":"43\n"},
+    "REPAIR-03": {"kind":"stdout_exact","expected_stdout":"1\n"},
+    "REPAIR-04": {"kind":"stdout_exact","expected_stdout":"56\n"},
+    "REPAIR-05": {"kind":"stdout_exact","expected_stdout":"40\n"},
+    "REPAIR-06": {"kind":"stdout_exact","expected_stdout":"43\n"},
+    "REPAIR-07": {"kind":"stdout_exact","expected_stdout":"56\n"},
+    "REPAIR-08": {"kind":"stdout_exact","expected_stdout":"49\n"}
+  }
+}

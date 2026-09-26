@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Pact release gates: prove outcomes, speed, and security</title>
+  <desc id="desc">Four evidence gates: correct completion within two percentage points of Rust, measured end-to-end speed before making a faster claim, zero severe security failures, and a pre-registered 96-task held-out evaluation with paired uncertainty.</desc>
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#081527"/><stop offset="1" stop-color="#102d43"/></linearGradient>
+    <linearGradient id="teal" x2="1"><stop stop-color="#42d6c2"/><stop offset="1" stop-color="#63a8ff"/></linearGradient>
+    <style>
+      .eyebrow{font:700 15px Inter,ui-sans-serif,system-ui,sans-serif;letter-spacing:2px;fill:#50ddca}.title{font:700 43px Inter,ui-sans-serif,system-ui,sans-serif;fill:#f4f8fc}
+      .head{font:700 24px Inter,ui-sans-serif,system-ui,sans-serif;fill:#f4f8fc}.big{font:800 44px Inter,ui-sans-serif,system-ui,sans-serif;fill:#5fe0cc}
+      .body{font:400 17px Inter,ui-sans-serif,system-ui,sans-serif;fill:#c5d4df}.label{font:700 14px Inter,ui-sans-serif,system-ui,sans-serif;letter-spacing:1px;fill:#102235}
+    </style>
+  </defs>
+  <rect width="1600" height="1000" rx="30" fill="url(#bg)"/>
+  <circle cx="1490" cy="30" r="210" fill="#28647a" opacity=".13"/>
+  <text x="88" y="91" class="eyebrow">PACT · RELEASE EVIDENCE</text>
+  <text x="88" y="151" class="title">Three co-equal gates. One evidence standard.</text>
+  <text x="88" y="193" class="body">A claim is earned on matched tasks, under the same tools, budgets, hardware, and sandbox policy.</text>
+  <g>
+    <rect x="88" y="240" width="700" height="245" rx="22" fill="#132b40" stroke="#2a4960" stroke-width="1.5"/>
+    <rect x="812" y="240" width="700" height="245" rx="22" fill="#132b40" stroke="#2a4960" stroke-width="1.5"/>
+    <rect x="88" y="515" width="700" height="245" rx="22" fill="#132b40" stroke="#2a4960" stroke-width="1.5"/>
+    <rect x="812" y="515" width="700" height="245" rx="22" fill="#132b40" stroke="#2a4960" stroke-width="1.5"/>
+  </g>
+  <g>
+    <rect x="120" y="271" width="105" height="29" rx="14" fill="url(#teal)"/><text x="172" y="291" text-anchor="middle" class="label">OUTCOMES</text>
+    <text x="120" y="365" class="big">≤ 2 pp</text><text x="300" y="356" class="head">Completion parity</text>
+    <text x="120" y="405" class="body">Pact's correct-completion rate stays within 2 percentage</text><text x="120" y="432" class="body">points of Rust overall and in each preselected critical group.</text>
+
+    <rect x="844" y="271" width="115" height="29" rx="14" fill="url(#teal)"/><text x="901" y="291" text-anchor="middle" class="label">END-TO-END</text>
+    <text x="844" y="365" class="big">−10%</text><text x="1030" y="356" class="head">Speed claim threshold</text>
+    <text x="844" y="405" class="body">At least 10% lower median time to correct result than Rust,</text><text x="844" y="432" class="body">with comparable completion and no material tail or timeout regression.</text>
+
+    <rect x="120" y="546" width="102" height="29" rx="14" fill="url(#teal)"/><text x="171" y="566" text-anchor="middle" class="label">SECURITY</text>
+    <text x="120" y="640" class="big">ZERO</text><text x="275" y="631" class="head">Severe failures</text>
+    <text x="120" y="680" class="body">No capability escapes, unauthorized effects, memory safety</text><text x="120" y="707" class="body">failures, or sandbox regressions in adversarial testing.</text>
+
+    <rect x="844" y="546" width="99" height="29" rx="14" fill="url(#teal)"/><text x="894" y="566" text-anchor="middle" class="label">EVIDENCE</text>
+    <text x="844" y="640" class="big">96 tasks</text><text x="1053" y="631" class="head">Held-out suite</text>
+    <text x="844" y="680" class="body">3 pinned configurations · 2 model families · 3 samples per task.</text><text x="844" y="707" class="body">Pre-register thresholds; report paired uncertainty and failures.</text>
+  </g>
+  <rect x="88" y="805" width="1424" height="112" rx="20" fill="#0d2235" stroke="#2c6471" stroke-width="1.5"/>
+  <text x="120" y="849" class="eyebrow">REPORT SEPARATELY</text>
+  <text x="120" y="884" class="body">Task-to-correct-result time includes generation, checks, repairs, compilation, tool waits, and execution.</text>
+  <text x="120" y="908" class="body">Native speed is a per-workload measurement; faster-than-Rust execution is a stretch target, not a general claim.</text>
+</svg>
